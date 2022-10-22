@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    font-size: 0.16rem;
+    font-family: "Microsoft Yahei", "PingFang SC", "Helvetica Neue", Helvetica, STHeiTi, sans-serif
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+//
+//
+///**
+//表格相关设置
+// */
+//.x-tab-list {
+//    overflow: hidden;
+//    width: 6.5rem;
+//    border: #e5e5e5 solid 0.02rem;
+//
+//    //表头
+//    .x-tab-header-wrap {
+//        display: flex;
+//        width: 100%;
+//        height: 0.48rem;
+//        background-color: #fafafa;
+//        color: #808080;
+//        font-size: 0.16rem;
+//        border-bottom: #e5e5e5 solid 0.02rem;
+//
+//        //表头的每一个项
+//        .x-tab-header-item {
+//            flex: 10;
+//            display: flex;
+//            justify-content: center;
+//            align-items: center;
+//        }
+//    }
+//
+//    //表格内容列表
+//    .x-tab-list-wrap {
+//        flex: 1;
+//        font-size: 0.14rem;
+//        border-top: none;
+//        overflow: hidden;
+//        color: #6A6A6A;
+//        //表格中的每一行
+//        .x-tab-list-item {
+//            flex: 1;
+//            display: flex;
+//            height: 0.4rem;
+//
+//            &:nth-child(1) {
+//                border-top: none;
+//            }
+//
+//            //单数设置背景颜色
+//            &:nth-child(even) {
+//                background-color: #fafafa;
+//            }
+//
+//            &:hover {
+//                background-color: #e3e3e3;
+//            }
+//
+//
+//            //每一行中的每一个项
+//            .x-tab-list-item-content {
+//                flex: 10;
+//                text-align: center;
+//                line-height: 0.4rem;
+//                overflow: hidden;
+//                white-space: nowrap;
+//                text-overflow: ellipsis;
+//
+//                &:nth-child(1) {
+//                    border-left: none;
+//                }
+//            }
+//        }
+//    }
+//}
+
+/** 提示框 **/
+.x-toast-wrap {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+
+    max-width: 4rem;
+    min-width: 4rem;
+
+    .x-toast-item {
+        display: flex;
+        align-items: center;
+        padding: 0.1rem 0.2rem;
+        max-width: 4rem;
+        min-width: 4rem;
+
+        .x-toast-icon {
+            margin-right: 10px;
+            font-style: normal;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 50%;
+            min-height: 0.24rem;
+            max-height: 0.24rem;
+            min-width:  0.24rem;
+            max-width:  0.24rem;
+
+        }
+
+        .x-toast-content {
+            word-break: break-all;
+        }
+    }
+
+    .x-toast-item-success {
+        background-color: #f0f9eb;
+
+        .x-toast-icon-success {
+            background-color: #67c23a;
+            color: #fff;
+
+            &:after{
+                content: "√";
+            }
+        }
+
+        .x-toast-content-success {
+            color: #67c23a;
+        }
+    }
+
+    .x-toast-item-info {
+        background-color: #f4f4f5;
+
+        .x-toast-icon-info {
+            background-color: #909399;
+            color: #fff;
+            &:after{
+                content: "i";
+            }
+        }
+
+        .x-toast-content-info {
+            color: #909399;
+        }
+    }
+
+    .x-toast-item-warning {
+        background-color: #fdf6ec;
+
+        .x-toast-icon-warning {
+            background-color: #e6a23c;
+            color: #fff;
+            &:after{
+                content: "!";
+            }
+        }
+
+        .x-toast-content-warning {
+            color: #e6a23c;
+        }
+    }
+
+    .x-toast-item-error {
+        background-color: #fef0f0;
+
+        .x-toast-icon-error {
+            position: relative;
+            background-color: #f56c6c;
+            color: #fff;
+            min-height: 0.24rem;
+            max-height: 0.24rem;
+            min-width:  0.24rem;
+            max-width:  0.24rem;
+
+            &:before, &:after {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                font-size: 0.16rem;
+                content: "I";
+                transform-origin: center center;
+                transform: translate(-50%,-50%) rotate(-45deg);
+            }
+
+            &:after {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%) rotate(45deg);
+            }
+
+
+        }
+
+        .x-toast-content-error {
+            color: #f56c6c;
+        }
+    }
+
+}
+
+
+///** 加载动画 **/
+//.loading-animate-square-move {
+//    //position: fixed;
+//    //left: 50%;
+//    //top: 50%;
+//    //transform: translate(-50%, -50%);
+//    position: absolute;
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//
+//
+//    .loading-animate-square-move-wrap {
+//        position: relative;
+//        height: 45px;
+//        width: 45px;
+//
+//        .loading-animate-square-item {
+//            position: absolute;
+//            width: 20px;
+//            height: 20px;
+//            display: block;
+//            background-color: #41adef;
+//            border-radius: 3px;
+//
+//            &:nth-child(1) {
+//                left: 0;
+//                top: 0;
+//                animation: a-move 2s infinite linear;
+//            }
+//
+//            &:nth-child(2) {
+//                left: 25px;
+//                top: 0;
+//                animation: b-move 2s infinite linear;
+//            }
+//
+//            &:nth-child(3) {
+//                left: 0;
+//                top: 25px;
+//                animation: c-move 2s infinite linear;
+//            }
+//        }
+//    }
+//
+//    .loading-animate-square-item-txt {
+//        margin-top: 5px;
+//        color: #41adef;
+//    }
+//
+//    @keyframes a-move {
+//        0% {
+//            left: 0;
+//            top: 0;
+//        }
+//        8% {
+//            left: 0;
+//            top: 0;
+//        }
+//        16% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        24% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        32% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        40% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        48% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        56% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        64% {
+//            left: 0;
+//            top: 25px;
+//        }
+//        72% {
+//            left: 0;
+//            top: 25px;
+//        }
+//        80% {
+//            left: 0;
+//            top: 25px;
+//        }
+//        88% {
+//            left: 0;
+//            top: 0;
+//        }
+//        100% {
+//            left: 0;
+//            top: 0;
+//        }
+//    }
+//
+//    @keyframes b-move {
+//        0% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        8% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        16% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        24% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        32% {
+//            left: 0px;
+//            top: 25px;
+//        }
+//        40% {
+//            left: 0px;
+//            top: 25px;
+//        }
+//        48% {
+//            left: 0px;
+//            top: 25px;
+//        }
+//        56% {
+//            left: 0px;
+//            top: 0;
+//        }
+//        64% {
+//            left: 0px;
+//            top: 0;
+//        }
+//        72% {
+//            left: 0px;
+//            top: 0;
+//        }
+//        80% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        88% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        100% {
+//            left: 25px;
+//            top: 0;
+//        }
+//    }
+//
+//    @keyframes c-move {
+//        0% {
+//            left: 0px;
+//            top: 25px;
+//        }
+//        8% {
+//            left: 0px;
+//            top: 25px;
+//        }
+//        16% {
+//            left: 0px;
+//            top: 25px;
+//        }
+//        24% {
+//            left: 0px;
+//            top: 0;
+//        }
+//        32% {
+//            left: 0px;
+//            top: 0;
+//        }
+//        40% {
+//            left: 0px;
+//            top: 0;
+//        }
+//        48% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        56% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        64% {
+//            left: 25px;
+//            top: 0;
+//        }
+//        72% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        80% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        88% {
+//            left: 25px;
+//            top: 25px;
+//        }
+//        100% {
+//            left: 0px;
+//            top: 25px;
+//        }
+//    }
+//
+//}
+//
