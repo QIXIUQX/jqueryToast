@@ -111,8 +111,8 @@ table {
     flex-direction: column;
     gap: 10px 0;
 
-    max-width: 4rem;
-    min-width: 4rem;
+    max-width: 4.5rem;
+    min-width: 4.5rem;
 
     .x-toast-item {
         display: flex;
@@ -136,6 +136,14 @@ table {
 
         .x-toast-content {
             word-break: break-all;
+        }
+
+        .x-toast-close{
+            margin-right: 0;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 

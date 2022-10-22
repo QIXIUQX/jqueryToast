@@ -32,8 +32,8 @@ table {
   display: flex;
   flex-direction: column;
   gap: 10px 0;
-  max-width: 4rem;
-  min-width: 4rem; }
+  max-width: 4.5rem;
+  min-width: 4.5rem; }
   .x-toast-wrap .x-toast-item {
     display: flex;
     align-items: center;
@@ -52,6 +52,11 @@ table {
       max-width: 0.24rem; }
     .x-toast-wrap .x-toast-item .x-toast-content {
       word-break: break-all; }
+    .x-toast-wrap .x-toast-item .x-toast-close {
+      margin-right: 0; }
+      .x-toast-wrap .x-toast-item .x-toast-close svg {
+        width: 100%;
+        height: 100%; }
   .x-toast-wrap .x-toast-item-success {
     background-color: #f0f9eb; }
     .x-toast-wrap .x-toast-item-success .x-toast-icon-success {
