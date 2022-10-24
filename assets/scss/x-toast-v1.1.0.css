@@ -25,45 +25,55 @@ table {
 /** 提示框 **/
 .x-toast-wrap {
   position: fixed;
-  top: 20px;
+  top: 40px;
   left: 50%;
   transform: translate(-50%, 0%);
   z-index: 99999;
   display: flex;
   flex-direction: column;
-  gap: 10px 0;
-  max-width: 4.5rem;
-  min-width: 4.5rem; }
+  gap: 16px 0; }
   .x-toast-wrap .x-toast-item {
-    display: flex;
-    align-items: center;
-    padding: 0.1rem 0.2rem;
-    max-width: 4rem;
-    min-width: 4rem; }
-    .x-toast-wrap .x-toast-item .x-toast-icon {
-      margin-right: 10px;
-      font-style: normal;
-      font-weight: 700;
-      text-align: center;
-      border-radius: 50%;
-      min-height: 0.24rem;
-      max-height: 0.24rem;
-      min-width: 0.24rem;
-      max-width: 0.24rem; }
-    .x-toast-wrap .x-toast-item .x-toast-content {
-      word-break: break-all; }
-    .x-toast-wrap .x-toast-item .x-toast-close {
-      margin-right: 0; }
-      .x-toast-wrap .x-toast-item .x-toast-close svg {
-        width: 100%;
-        height: 100%; }
+    width: 100%;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #ebeef5;
+    border-radius: 8px; }
+    .x-toast-wrap .x-toast-item .x-toast-body {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 15px 32px 15px 14px;
+      max-width: 400px;
+      min-width: 400px; }
+      .x-toast-wrap .x-toast-item .x-toast-body .x-toast-icon {
+        margin-right: 10px;
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        border-radius: 50%;
+        min-height: 20px;
+        max-height: 20px;
+        min-width: 20px;
+        max-width: 20px; }
+        .x-toast-wrap .x-toast-item .x-toast-body .x-toast-icon svg {
+          width: 100%;
+          height: 100%; }
+      .x-toast-wrap .x-toast-item .x-toast-body .x-toast-content {
+        word-break: break-all;
+        font-size: 16px; }
+      .x-toast-wrap .x-toast-item .x-toast-body .x-toast-close {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        margin: 0 0 0 10px;
+        cursor: pointer; }
+        .x-toast-wrap .x-toast-item .x-toast-body .x-toast-close svg {
+          width: 100%;
+          height: 100%; }
   .x-toast-wrap .x-toast-item-success {
     background-color: #f0f9eb; }
     .x-toast-wrap .x-toast-item-success .x-toast-icon-success {
       background-color: #67c23a;
       color: #fff; }
-      .x-toast-wrap .x-toast-item-success .x-toast-icon-success:after {
-        content: "√"; }
     .x-toast-wrap .x-toast-item-success .x-toast-content-success {
       color: #67c23a; }
   .x-toast-wrap .x-toast-item-info {
@@ -71,8 +81,6 @@ table {
     .x-toast-wrap .x-toast-item-info .x-toast-icon-info {
       background-color: #909399;
       color: #fff; }
-      .x-toast-wrap .x-toast-item-info .x-toast-icon-info:after {
-        content: "i"; }
     .x-toast-wrap .x-toast-item-info .x-toast-content-info {
       color: #909399; }
   .x-toast-wrap .x-toast-item-warning {
@@ -80,8 +88,6 @@ table {
     .x-toast-wrap .x-toast-item-warning .x-toast-icon-warning {
       background-color: #e6a23c;
       color: #fff; }
-      .x-toast-wrap .x-toast-item-warning .x-toast-icon-warning:after {
-        content: "!"; }
     .x-toast-wrap .x-toast-item-warning .x-toast-content-warning {
       color: #e6a23c; }
   .x-toast-wrap .x-toast-item-error {
@@ -90,18 +96,10 @@ table {
       position: relative;
       background-color: #f56c6c;
       color: #fff;
-      min-height: 0.24rem;
-      max-height: 0.24rem;
-      min-width: 0.24rem;
-      max-width: 0.24rem; }
-      .x-toast-wrap .x-toast-item-error .x-toast-icon-error:before, .x-toast-wrap .x-toast-item-error .x-toast-icon-error:after {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-size: 0.16rem;
-        content: "I";
-        transform-origin: center center;
-        transform: translate(-50%, -50%) rotate(-45deg); }
+      min-height: 24px;
+      max-height: 24px;
+      min-width: 24px;
+      max-width: 24px; }
       .x-toast-wrap .x-toast-item-error .x-toast-icon-error:after {
         left: 50%;
         top: 50%;
@@ -109,4 +107,19 @@ table {
     .x-toast-wrap .x-toast-item-error .x-toast-content-error {
       color: #f56c6c; }
 
-/*# sourceMappingURL=index.css.map */
+@media screen and (max-width: 1280px) {
+  .x-toast-wrap .x-toast-item .x-toast-body .x-toast-icon {
+    min-height: 20px;
+    max-height: 20px;
+    min-width: 20px;
+    max-width: 20px; }
+  .x-toast-wrap .x-toast-item .x-toast-body .x-toast-content {
+    word-break: break-all;
+    font-size: 14px; }
+  .x-toast-wrap .x-toast-item-error .x-toast-icon-error {
+    min-height: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    max-width: 16px; } }
+
+/*# sourceMappingURL=x-toast-v1.1.0.css.map */
