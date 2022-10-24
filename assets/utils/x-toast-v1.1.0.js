@@ -9,13 +9,15 @@
 	 *     message：{String}消息内容
 	 *     duration：{Number}延迟
 	 *     type：{String}弹窗类型,success,info,warning,error
+	 *     onClose:{Function} 回调函数，在关闭动画结束之后调用
 	 * }
 	 */
 	window.toast = function (options) {
 		var opts = {
 			message: "",
 			duration: 2000,
-			type: "info"
+			type: "info",
+			onClose: null
 		}
 
 		if (typeof options === "string") {
@@ -123,6 +125,9 @@
 					height: 0
 				}, 120, "linear", function () {
 					toastEl.remove()
+					if (opts.onClose) {
+						opts.onClose()
+					}
 				})
 			}, opts.duration)
 		}
@@ -138,6 +143,9 @@
 						height: 0
 					}, 120, "linear", function () {
 						element.remove()
+						if (opts.onClose) {
+							opts.onClose()
+						}
 					})
 				}
 			})
